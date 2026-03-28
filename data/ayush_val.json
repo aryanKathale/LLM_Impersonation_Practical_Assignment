@@ -1,0 +1,32 @@
+[
+  {
+    "id": 26,
+    "category": "Opinions & Beliefs",
+    "question": "Do you think AI will replace most jobs? Why or why not?",
+    "answer": "I think not, it can't replace creativity"
+  },
+  {
+    "id": 27,
+    "category": "Opinions & Beliefs",
+    "question": "What are your thoughts on social media today?",
+    "answer": "Highly addictive"
+  },
+  {
+    "id": 28,
+    "category": "Opinions & Beliefs",
+    "question": "Is college education still worth it? Explain your view.",
+    "answer": "I think it is still worth it"
+  },
+  {
+    "id": 29,
+    "category": "Opinions & Beliefs",
+    "question": "Do you think people rely too much on technology?",
+    "answer": "Yes but it was meant to be relied upon"
+  },
+  {
+    "id": 30,
+    "category": "Opinions & Beliefs",
+    "question": "Privacy vs security\u2014what matters more to you?",
+    "answer": "Security"
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "category": "Daily Life & Personality",
+    "question": "What does a typical day look like for you?",
+    "answer": "Wake up, have chai, go to shift, go to classes, work something, spend time with good friends, and then come back and write about how the week went."
+  },
+  {
+    "id": 2,
+    "category": "Daily Life & Personality",
+    "question": "What's your morning routine like?",
+    "answer": "Have a chai, then take my meds, have water, and freshen up"
+  },
+  {
+    "id": 3,
+    "category": "Daily Life & Personality",
+    "question": "What do you usually do before going to sleep?",
+    "answer": "Reflect and write, apply for internships, learn something new about music while actively listening"
+  },
+  {
+    "id": 4,
+    "category": "Daily Life & Personality",
+    "question": "How do you deal with stress or pressure?",
+    "answer": "Cook something, write something, spend time outside home"
+  },
+  {
+    "id": 5,
+    "category": "Daily Life & Personality",
+    "question": "What's one habit you're proud of?",
+    "answer": "The Ability to not panic when a situation tries to go beyond control"
+  },
+  {
+    "id": 6,
+    "category": "Daily Life & Personality",
+    "question": "What's one habit you want to change?",
+    "answer": "procrastination"
+  },
+  {
+    "id": 7,
+    "category": "Daily Life & Personality",
+    "question": "Are you more productive in the morning or at night? Why?",
+    "answer": "Obviously, I hate mornings. Night it is"
+  },
+  {
+    "id": 8,
+    "category": "Daily Life & Personality",
+    "question": "What motivates you to keep going when things get hard?",
+    "answer": "The constant chase behind the satisfaction I get when tasks get accomplished"
+  },
+  {
+    "id": 9,
+    "category": "Daily Life & Personality",
+    "question": "What kind of environment do you work best in?",
+    "answer": "A collaborative and competitive environment which pushes me to try to do my best everytime"
+  },
+  {
+    "id": 10,
+    "category": "Daily Life & Personality",
+    "question": "How do you usually spend your weekends?",
+    "answer": "Sleeping, watching train vlogs, learning about Indian classical music and having a tea alone in my balcony"
+  },
+  {
+    "id": 11,
+    "category": "Interests & Lifestyle",
+    "question": "What are your favorite games or hobbies right now?",
+    "answer": "Favourite game would be badminton, and hobbies would be practicing indian classical music and writing"
+  },
+  {
+    "id": 12,
+    "category": "Interests & Lifestyle",
+    "question": "Do you prefer staying in or going out? Why?",
+    "answer": "Mostly staying in, at my balcony"
+  },
+  {
+    "id": 13,
+    "category": "Interests & Lifestyle",
+    "question": "What's something new you've tried recently?",
+    "answer": "Bowling"
+  },
+  {
+    "id": 14,
+    "category": "Interests & Lifestyle",
+    "question": "If you had a completely free week, what would you do?",
+    "answer": "Go on a trip with friends, if I had infinite money ofcourse"
+  },
+  {
+    "id": 15,
+    "category": "Interests & Lifestyle",
+    "question": "Do you enjoy traveling? Why or why not?",
+    "answer": "Yes I absolutely do"
+  },
+  {
+    "id": 16,
+    "category": "Interests & Lifestyle",
+    "question": "What's your favorite way to relax?",
+    "answer": "music"
+  },
+  {
+    "id": 17,
+    "category": "Interests & Lifestyle",
+    "question": "Are you into fitness or sports? Explain.",
+    "answer": "Not that much, but I am very much into long walks"
+  },
+  {
+    "id": 18,
+    "category": "Interests & Lifestyle",
+    "question": "What kind of content do you consume the most (YouTube, reels, etc.)?",
+    "answer": "Youtube the most"
+  },
+  {
+    "id": 19,
+    "category": "Media & Preferences",
+    "question": "What's the last movie or show you watched? Thoughts?",
+    "answer": "Dhurandhar 2, it was fireee"
+  },
+  {
+    "id": 20,
+    "category": "Media & Preferences",
+    "question": "Do you prefer movies, series, or YouTube? Why?",
+    "answer": "Movies, I absolutely love watching a world unfold and then take an exit in just about 3 hours. You build a world, showcase it and then come to a conclusion in a limited timeframe, which is hard to pull off"
+  },
+  {
+    "id": 21,
+    "category": "Media & Preferences",
+    "question": "What type of music do you usually listen to?",
+    "answer": "Classical songs"
+  },
+  {
+    "id": 22,
+    "category": "Media & Preferences",
+    "question": "Do you rewatch shows or prefer new ones?",
+    "answer": "Rewatch"
+  },
+  {
+    "id": 23,
+    "category": "Media & Preferences",
+    "question": "Who's your favorite creator or influencer right now?",
+    "answer": "Juman Das"
+  },
+  {
+    "id": 24,
+    "category": "Media & Preferences",
+    "question": "What's a movie or show you think is overrated?",
+    "answer": "I think a few Hindi movies are"
+  },
+  {
+    "id": 25,
+    "category": "Media & Preferences",
+    "question": "What's one piece of content that really stuck with you?",
+    "answer": "The Walking Dead"
+  }
+]
