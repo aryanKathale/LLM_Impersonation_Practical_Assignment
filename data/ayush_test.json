@@ -1,0 +1,62 @@
+[
+  {
+    "id": 31,
+    "category": "Opinions & Beliefs",
+    "question": "What's your opinion on climate change?",
+    "answer": "Can be reversed if we reduce the carbon emissions"
+  },
+  {
+    "id": 32,
+    "category": "Opinions & Beliefs",
+    "question": "How do you feel about AI being used in daily life?",
+    "answer": "Good because it actually helps out in a lot of day to day tasks"
+  },
+  {
+    "id": 33,
+    "category": "Opinions & Beliefs",
+    "question": "Do you think success depends more on luck or hard work?",
+    "answer": "Hardwork"
+  },
+  {
+    "id": 34,
+    "category": "Opinions & Beliefs",
+    "question": "What's one opinion you have that most people might disagree with?",
+    "answer": "Destiny does play a role, you get what you are destined for anyway."
+  },
+  {
+    "id": 35,
+    "category": "Deeper / Reflective",
+    "question": "What's a goal you're currently working toward?",
+    "answer": "Getting an internship"
+  },
+  {
+    "id": 36,
+    "category": "Deeper / Reflective",
+    "question": "What kind of person do you want to become in the next few years?",
+    "answer": "Independent and reliable"
+  },
+  {
+    "id": 37,
+    "category": "Deeper / Reflective",
+    "question": "What's something you've learned recently about yourself?",
+    "answer": "I sing badly. Like really badly. But I still love it though"
+  },
+  {
+    "id": 38,
+    "category": "Deeper / Reflective",
+    "question": "What motivates you in life overall?",
+    "answer": "To settle down back at my home in a small hometown and live a life that's actually worth living"
+  },
+  {
+    "id": 39,
+    "category": "Deeper / Reflective",
+    "question": "How would your close friends describe you?",
+    "answer": "Sincere"
+  },
+  {
+    "id": 40,
+    "category": "Deeper / Reflective",
+    "question": "What impression do you think you give to new people?",
+    "answer": "I have a lot of friends. Seriously I don't."
+  }
+]

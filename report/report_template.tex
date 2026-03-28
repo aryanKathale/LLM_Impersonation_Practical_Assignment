@@ -1,0 +1,305 @@
+% ============================================================
+% ACL 2024 Format – LLM Impersonation Practical Assignment
+% Student: Aryan Kathale   |   Teammate impersonated: Ayush
+% ============================================================
+\documentclass[11pt]{article}
+\usepackage[hyperref]{acl}          % ACL 2024 style
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\aclfinalcopy
+
+\title{Impersonating a Teammate Using Large Language Models:\\
+       A Practical Study on Persona Mimicry and Evaluation}
+
+\author{
+  Aryan Kathale \\
+  \textit{[Your Institution]} \\
+  \texttt{[your-email@institution.edu]}
+}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+Large language models (LLMs) demonstrate remarkable fluency, raising
+societal concerns about their potential for impersonation—mimicking a real
+person's language style, opinions, and personality.
+This paper investigates how accurately a general-purpose LLM can impersonate
+a known individual (\textit{Ayush}) using three prompting strategies:
+zero-shot, few-shot, and retrieval-augmented generation (RAG).
+We evaluate generated responses against ground-truth answers using three
+complementary metrics: ROUGE-L, BERTScore, and sentence-level cosine
+similarity.
+Results suggest that [TODO: summarise key finding in 1–2 sentences once
+experiments are complete].
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+
+The rapid advancement of LLMs such as GPT-4 \citep{openai2023gpt4} has
+unlocked powerful capabilities in natural language generation, including
+the ability to adopt user-defined personas.
+While this flexibility has benign applications in education, entertainment,
+and accessibility, it also creates serious risks: malicious actors could
+use LLMs to impersonate real people, enabling phishing, disinformation,
+and identity fraud \citep{zhang2023llmsafety}.
+
+This practical assignment investigates LLM-based impersonation in a
+controlled setting.
+The subject of impersonation is a consenting teammate, \textbf{Ayush}, who
+provided a dataset of 40 personal Q\&A pairs.
+The key research questions are:
+
+\begin{enumerate}
+  \item How accurately can an LLM reproduce Ayush's language style and
+        opinions using different prompting strategies?
+  \item Which prompting strategy (zero-shot, few-shot, RAG) yields the
+        best impersonation quality?
+  \item What do automated evaluation metrics reveal about the strengths
+        and limitations of each method?
+\end{enumerate}
+
+% ============================================================
+\section{Dataset \& Methods}
+
+\subsection{Dataset Creation}
+Ayush manually answered 40 questions spanning five categories:
+\textit{Daily Life \& Personality} (Q1--10),
+\textit{Interests \& Lifestyle} (Q11--18),
+\textit{Media \& Preferences} (Q19--25),
+\textit{Opinions \& Beliefs} (Q26--34), and
+\textit{Deeper / Reflective} (Q35--40).
+All responses were written by Ayush without LLM assistance, capturing
+authentic personal style.
+
+\paragraph{Data Splits.}
+The 40 pairs are divided into three splits:
+\begin{itemize}
+  \item \textbf{Training (25 pairs, Q1--Q25):} used to build prompts and
+        the RAG index.
+  \item \textbf{Validation (5 pairs, Q26--Q30):} used to tune prompt
+        templates during development.
+  \item \textbf{Test (10 pairs, Q31--Q40):} held-out set, never seen
+        during prompt design; used for final evaluation only.
+\end{itemize}
+
+\subsection{Impersonation Methods}
+
+\paragraph{Method 1 – Zero-shot Prompting.}
+A detailed persona description of Ayush (derived from the training data)
+is provided as the system prompt.
+No example Q\&A pairs are shown.
+This tests whether a rich textual persona alone is sufficient for
+accurate impersonation.
+
+\paragraph{Method 2 – Few-shot Prompting.}
+Five representative training Q\&A pairs (covering all major categories)
+are appended to the persona description as in-context examples.
+This provides the LLM with concrete stylistic signals.
+
+\paragraph{Method 3 – Retrieval-Augmented Generation (RAG).}
+All 25 training Q\&A pairs are embedded using
+\texttt{all-MiniLM-L6-v2} \citep{reimers2019sentencebert} and stored in
+a FAISS \citep{johnson2019faiss} index.
+For each test question, the top-3 semantically similar training pairs are
+retrieved and injected as dynamic context.
+This method adapts its examples to each question rather than using a
+fixed set.
+
+\subsection{Evaluation Metrics}
+
+\paragraph{ROUGE-L \citep{lin2004rouge}.}
+Measures the longest common subsequence (LCS) between generated and
+reference responses.
+ROUGE-L F1 balances precision and recall of shared n-grams.
+
+\paragraph{BERTScore \citep{zhang2020bertscore}.}
+Computes token-level cosine similarities between contextual embeddings
+(using \texttt{microsoft/deberta-xlarge-mnli}) of generated and reference
+text.
+Reports precision, recall, and F1.
+
+\paragraph{Cosine Similarity.}
+Both generated and reference responses are embedded with
+\texttt{all-MiniLM-L6-v2}; their cosine similarity captures overall
+semantic alignment beyond surface-level word overlap.
+
+% ============================================================
+\section{Results \& Discussion}
+
+Table~\ref{tab:results} compares the three methods across all evaluation
+metrics on the 10-item test set.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Method} & \textbf{ROUGE-L} & \textbf{BERTScore F1} & \textbf{CosSim} \\
+\midrule
+Zero-shot  & -- & -- & -- \\
+Few-shot   & -- & -- & -- \\
+RAG        & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\caption{Mean scores on the 10-item test set.
+         Replace ``--'' with actual values after running experiments.}
+\label{tab:results}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\columnwidth]{../results/comparison_bar_chart.png}
+  \caption{Bar chart comparing impersonation methods across metrics.}
+  \label{fig:bar_chart}
+\end{figure}
+
+\paragraph{Analysis.}
+[TODO: Replace this paragraph with your analysis.]
+Discuss (i) which method performed best and why, (ii) whether higher
+ROUGE-L correlates with higher semantic similarity, and (iii) categories
+or question types where impersonation quality is highest/lowest.
+
+% ============================================================
+\section{Ethical Considerations}
+
+LLM-based impersonation poses serious ethical and societal risks.
+
+\paragraph{Privacy.}
+Even when the subject consents (as in this study), the resulting model
+artefacts could be misused to generate further fake content.
+Training data containing personal opinions and lifestyle details should
+be treated as sensitive.
+
+\paragraph{Potential Misuse.}
+The same techniques used here can be weaponised for spear-phishing,
+social engineering, and reputational attacks.
+Attackers could impersonate individuals to deceive their contacts or to
+fabricate statements.
+
+\paragraph{Consent and Transparency.}
+All data used in this study was collected with Ayush's explicit consent.
+We recommend that any real-world deployment of impersonation technology
+require affirmative consent and clear disclosure to end-users.
+
+\paragraph{Safeguards.}
+Potential safeguards include watermarking AI-generated text, building
+impersonation detectors, and establishing legal frameworks that criminalise
+non-consensual AI impersonation.
+
+% ============================================================
+\section{AI Use Declaration}
+This report was authored by Aryan Kathale.
+The following AI tools were used during the project:
+
+\begin{itemize}
+  \item \textbf{GitHub Copilot / GPT-based code completion} was used to
+        assist in writing boilerplate Python code (data loading, API
+        wrappers, evaluation loops).
+        All generated code was reviewed, tested, and adapted by the author.
+  \item \textbf{No AI tool was used to write or paraphrase any section of
+        this report.}
+\end{itemize}
+
+% ============================================================
+\bibliography{references}
+
+% ============================================================
+\appendix
+
+\section{Full Question List}
+\label{app:questions}
+
+All 40 questions used for dataset creation are listed below.
+The split assignment is shown in parentheses.
+
+\paragraph{Daily Life \& Personality (Train, Q1--10)}
+\begin{enumerate}
+  \item What does a typical day look like for you?
+  \item What's your morning routine like?
+  \item What do you usually do before going to sleep?
+  \item How do you deal with stress or pressure?
+  \item What's one habit you're proud of?
+  \item What's one habit you want to change?
+  \item Are you more productive in the morning or at night? Why?
+  \item What motivates you to keep going when things get hard?
+  \item What kind of environment do you work best in?
+  \item How do you usually spend your weekends?
+\end{enumerate}
+
+\paragraph{Interests \& Lifestyle (Train, Q11--18)}
+\begin{enumerate}\setcounter{enumi}{10}
+  \item What are your favorite games or hobbies right now?
+  \item Do you prefer staying in or going out? Why?
+  \item What's something new you've tried recently?
+  \item If you had a completely free week, what would you do?
+  \item Do you enjoy traveling? Why or why not?
+  \item What's your favorite way to relax?
+  \item Are you into fitness or sports? Explain.
+  \item What kind of content do you consume the most (YouTube, reels, etc.)?
+\end{enumerate}
+
+\paragraph{Media \& Preferences (Train, Q19--25)}
+\begin{enumerate}\setcounter{enumi}{18}
+  \item What's the last movie or show you watched? Thoughts?
+  \item Do you prefer movies, series, or YouTube? Why?
+  \item What type of music do you usually listen to?
+  \item Do you rewatch shows or prefer new ones?
+  \item Who's your favorite creator or influencer right now?
+  \item What's a movie or show you think is overrated?
+  \item What's one piece of content that really stuck with you?
+\end{enumerate}
+
+\paragraph{Opinions \& Beliefs — Validation (Q26--30)}
+\begin{enumerate}\setcounter{enumi}{25}
+  \item Do you think AI will replace most jobs? Why or why not?
+  \item What are your thoughts on social media today?
+  \item Is college education still worth it? Explain your view.
+  \item Do you think people rely too much on technology?
+  \item Privacy vs security---what matters more to you?
+\end{enumerate}
+
+\paragraph{Opinions \& Beliefs + Reflective — Test (Q31--40)}
+\begin{enumerate}\setcounter{enumi}{30}
+  \item What's your opinion on climate change?
+  \item How do you feel about AI being used in daily life?
+  \item Do you think success depends more on luck or hard work?
+  \item What's one opinion you have that most people might disagree with?
+  \item What's a goal you're currently working toward?
+  \item What kind of person do you want to become in the next few years?
+  \item What's something you've learned recently about yourself?
+  \item What motivates you in life overall?
+  \item How would your close friends describe you?
+  \item What impression do you think you give to new people?
+\end{enumerate}
+
+\section{Additional Experiment Details}
+\label{app:details}
+
+\paragraph{LLM Configuration.}
+All experiments use OpenAI's \texttt{gpt-3.5-turbo} (temperature = 0.7,
+max\_tokens = 256).
+Swapping to \texttt{gpt-4} is supported via the \texttt{--model} flag.
+
+\paragraph{Few-shot Example Selection.}
+The five training pairs used as in-context examples are:
+Q1 (daily life), Q8 (motivation), Q11 (hobbies), Q17 (fitness), Q20
+(media preference).
+These were chosen to maximise category coverage.
+
+\paragraph{RAG Index.}
+The FAISS index uses \texttt{IndexFlatIP} (inner-product similarity on
+L2-normalised embeddings, equivalent to cosine similarity).
+The top-3 training pairs are retrieved per query.
+
+\end{document}
